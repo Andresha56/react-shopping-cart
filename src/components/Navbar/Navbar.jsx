@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import InputBase from "@mui/material/InputBase";
 import Container from "@mui/material/Container";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { UseSearchContext } from "../../context/searchContext/SearchContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -52,6 +53,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navbar() {
+  // -------------handel---search-----------
+const {setSearchInput,searchInput}=UseSearchContext()
+  const handelCartSearch = (event) => {
+    
+    setSearchInput( event.target.value)
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -82,24 +89,23 @@ function Navbar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
-              onClick={(()=>{
-                console.log("click")
-              })}
+              onChange={handelCartSearch}
+              value={searchInput}
             />
           </Search>
 
-        <Link to="/cart">
-        <Button
-            variant="outlined"
-            sx={{
-              background: "white",
-              "&:hover": { backgroundColor: "white" },
-            }}
-            startIcon={<ShoppingCartIcon />}
-          >
-            Cart
-          </Button>
-        </Link>
+          <Link to="/cart">
+            <Button
+              variant="outlined"
+              sx={{
+                background: "white",
+                "&:hover": { backgroundColor: "white" },
+              }}
+              startIcon={<ShoppingCartIcon />}
+            >
+              Cart
+            </Button>
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
