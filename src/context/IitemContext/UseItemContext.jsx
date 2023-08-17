@@ -12,7 +12,7 @@ export function ItemProvider({ children }) {
   const [selectedItem, setSelectedItems] = useState([]);
 
   const setItemSelected = (item) => {
-    setSelectedItems((prevItems) => [...prevItems, item]); // Add the selected item to the array
+    setSelectedItems((prevItems) => [...prevItems, item]); 
   };
 
   return (

@@ -82,6 +82,9 @@ function Navbar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ "aria-label": "search" }}
+              onClick={(()=>{
+                console.log("click")
+              })}
             />
           </Search>
 
