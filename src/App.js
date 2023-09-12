@@ -5,10 +5,7 @@ import Cart from './components/cart/Cart'
 
 
 
-
-
 function App() {
-  
 
   return (
 

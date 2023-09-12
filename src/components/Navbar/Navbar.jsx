@@ -57,7 +57,7 @@ function Navbar() {
 const {setSearchInput,searchInput}=UseSearchContext()
   const handelCartSearch = (event) => {
     
-    setSearchInput( event.target.value)
+    setSearchInput(event.target.value)
   };
   return (
     <AppBar position="static">

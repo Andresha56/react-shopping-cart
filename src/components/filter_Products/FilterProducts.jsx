@@ -12,7 +12,7 @@ export default function FilterProducts() {
   const { searchInput } = UseSearchContext();
   const [searchItem, setSearchItem] = useState(false);
 
-  // ------------filter--------------
+  // ------------filter----based--on--button--clicked----------
   const { API_response } = useContext(productsList);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function FilterProducts() {
 
       <Container sx={{ marginTop: "30px" }}>
         <Grid container gap={3} alignItems="center" justifyContent="center">
-          {/* -----------logic--for--s-earch--------- */}
+          {/* -----------logic--for--search--------- */}
           {searchItem
             ? API_response.filter((item) => {
                 const { title } = item;
